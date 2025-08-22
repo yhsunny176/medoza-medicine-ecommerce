@@ -1,1 +1,7 @@
-export { default } from "../../medicines/page";
+import React from "react";
+
+export default function Medicines() {
+	return (
+		<div>Medicines</div>
+	);
+}

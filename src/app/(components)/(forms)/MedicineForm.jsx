@@ -1,11 +1,12 @@
 import React from "react";
+import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import { InputField, TextAreaField } from "../(ui)/InputFields";
 import Button from "../(ui)/Button";
 
 const medicineTypes = ["Tablet", "Syrup", "Injection", "Capsule", "Ointment", "Drop", "Powder", "Cream"];
 
-export default function MedicineForm({ onSubmit }) {
+export default function MedicineForm() {
     const {
         register,
         handleSubmit,
@@ -15,6 +16,27 @@ export default function MedicineForm({ onSubmit }) {
 
     const selectedType = watch("medicineType");
 
+    // Handle form submission
+    const onSubmit = async (data) => {
+        try {
+            const res = await fetch("/api/medicines", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            const result = await res.json();
+            if (result.success) {
+                toast.success("Medicine added successfully!");
+            } else {
+                toast.error(result.error || "Error adding medicine");
+            }
+        } catch (err) {
+            toast.error("Network error: " + err.message);
+        }
+    };
+
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 p-6 bg-white rounded-xl shadow-form-shadow w-full">
             <h2 className="text-2xl font-bold mb-4">Add Medicine</h2>
@@ -23,6 +45,11 @@ export default function MedicineForm({ onSubmit }) {
                     label="Medicine Brand Name"
                     {...register("brandName", { required: true })}
                     error={errors.brandName && "Required"}
+                />
+                <InputField
+                    label="Pack Image URL"
+                    {...register("packImage", { required: true })}
+                    error={errors.packImage && "Required"}
                 />
                 <InputField
                     label="Generic Name"
@@ -38,6 +65,11 @@ export default function MedicineForm({ onSubmit }) {
                     label="Manufacturer Name"
                     {...register("manufacturer", { required: true })}
                     error={errors.manufacturer && "Required"}
+                />
+                <InputField
+                    label="Pharmacology"
+                    {...register("pharmacology", { required: true })}
+                    error={errors.pharmacology && "Required"}
                 />
                 <div>
                     <label className="block font-medium mb-1">Medicine Type</label>
@@ -77,8 +109,15 @@ export default function MedicineForm({ onSubmit }) {
                     label="Unit Price"
                     type="number"
                     step="0.01"
-                    {...register("unitPrice", { required: true })}
-                    error={errors.unitPrice && "Required"}
+                    min={0}
+                    {...register("unitPrice", {
+                        required: true,
+                        min: {
+                            value: 0,
+                            message: "Unit price cannot be negative",
+                        },
+                    })}
+                    error={errors.unitPrice && (errors.unitPrice.message || "Required")}
                 />
             </div>
             {/* Long Description Fields */}

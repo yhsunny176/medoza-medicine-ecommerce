@@ -1,4 +1,5 @@
 import { Outfit, Montserrat } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import { SessionProvider } from "next-auth/react";
 import Navbar from "./(components)/(shared)/Navbar";
 import Footer from "./(components)/(shared)/Footer";
@@ -31,7 +32,10 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className={`${outfitSans.variable} ${montserrat.variable} antialiased`}>
-                <SessionProvider>{children}</SessionProvider>
+                <SessionProvider>
+                    {children}
+                    <Toaster position="top-right" />
+                </SessionProvider>
             </body>
         </html>
     );

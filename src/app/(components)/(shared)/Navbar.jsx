@@ -40,7 +40,7 @@ export default function Navbar() {
                         </li>
                         {session && (
                             <li>
-                                <Link className={`link ${pathname === "/dashboard" ? "active" : ""}`} href="/dashboard">
+                                <Link href="/dashboard/add-products">
                                     Dashboard
                                 </Link>
                             </li>
