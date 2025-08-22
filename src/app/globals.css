@@ -18,6 +18,7 @@
 
   /* shadows */
   --login-shadow: -1px 8px 32px -3px rgba(0, 0, 0, 0.1);
+  --card-shad: -1px 8px 32px -3px rgba(0, 0, 0, 0.1);
 }
 html {
   scroll-behavior: smooth;
@@ -45,6 +46,7 @@ html {
   /* shadow */
   --shadow-login-form-shadow: var(--login-shadow);
   --shadow-form-shadow: var(--login-shadow);
+  --shadow-card-shadow: var(--card-shad);
 
 
 }
@@ -54,6 +56,15 @@ body {
   color: var(--foreground);
 }
 
+p{
+  font-family: var(--font-montserrat);
+}
+
+label {
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+}
+
 .link.active {
-  @apply text-blue-600 font-bold border-b-2 border-blue-600;
+  @apply text-blue-600 font-bold border-b-2 border-blue-600 font-montserrat;
 }

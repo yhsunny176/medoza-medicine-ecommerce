@@ -18,7 +18,7 @@ export default function Navbar() {
                     <Image src={"/logo-main.svg"} alt="Medoza brand logo" fill={true} />
                 </div>
                 <div>
-                    <ul className="flex gap-6">
+                    <ul className="flex gap-12">
                         <li>
                             <Link className={`link ${pathname === "/" ? "active" : ""}`} href="/">
                                 Home
@@ -40,9 +40,7 @@ export default function Navbar() {
                         </li>
                         {session && (
                             <li>
-                                <Link href="/dashboard/add-products">
-                                    Dashboard
-                                </Link>
+                                <Link href="/dashboard/add-products">Dashboard</Link>
                             </li>
                         )}
                     </ul>

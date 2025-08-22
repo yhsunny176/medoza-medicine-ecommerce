@@ -17,15 +17,15 @@ export default function Button({
 
     // Use Tailwind's arbitrary value syntax for dynamic colors
     const getColorClass = (variant) => {
-        if (disabled) return "bg-gray-300 text-gray-500 cursor-not-allowed border-gray-300";
+        if (disabled) return "bg-gray-300 font-montserrat text-gray-500 cursor-not-allowed border-gray-300";
         if (variant === "default") {
-            return `bg-green-primary text-white hover:bg-green-dark transition-colors duration-600 ease-in-out cursor-pointer`;
+            return `bg-green-primary font-montserrat text-white hover:bg-green-dark transition-colors duration-600 ease-in-out cursor-pointer`;
         }
         if (variant === "outline") {
-            return `border border-green-primary text-green-primary bg-white hover:bg-green-primary transition-colors duration-600 ease-in-out cursor-pointer`;
+            return `border border-green-primary font-montserrat text-green-primary bg-white hover:bg-green-primary transition-colors duration-600 ease-in-out cursor-pointer`;
         }
         if (variant === "cyan") {
-            return `text-button-text-secondary bg-cyan-primary hover:scale-105 transition-all duration-600 ease-in-out cursor-pointer`;
+            return `text-button-text-secondary font-montserrat bg-cyan-primary hover:scale-105 transition-all duration-600 ease-in-out cursor-pointer`;
         }
         return "";
     };

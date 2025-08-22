@@ -39,7 +39,7 @@ export default function MedicineForm() {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 p-6 bg-white rounded-xl shadow-form-shadow w-full">
-            <h2 className="text-2xl font-bold mb-4">Add Medicine</h2>
+            <h2 className="text-2xl font-bold mb-4 font-outfit">Add Medicine</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <InputField
                     label="Medicine Brand Name"
