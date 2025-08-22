@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import DashboardSidebar from "./DashboardSidebar";
-import Link from "next/link";
 
 export default function DashboardPage() {
     return (
