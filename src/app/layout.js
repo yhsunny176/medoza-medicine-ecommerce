@@ -31,17 +31,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className={`${outfitSans.variable} ${montserrat.variable} antialiased`}>
-                <SessionProvider>
-                    <header className="bg-white w-full h-full">
-                        <nav className="max-w-9/12 mx-auto py-8">
-                            <Navbar />
-                        </nav>
-                    </header>
-                    <main>{children}</main>
-                    <footer>
-                        <Footer />
-                    </footer>
-                </SessionProvider>
+                <SessionProvider>{children}</SessionProvider>
             </body>
         </html>
     );

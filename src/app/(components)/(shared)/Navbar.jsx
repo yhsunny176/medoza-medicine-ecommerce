@@ -24,23 +24,27 @@ export default function Navbar() {
                                 Home
                             </Link>
                         </li>
+
                         <li>
-                            <a className="link" href="#about-section">
-                                About
-                            </a>
+                            <Link href="/#about-section">About</Link>
                         </li>
+
                         <li>
                             <Link className={`link ${pathname === "/medicines" ? "active" : ""}`} href="/medicines">
                                 Medicines
                             </Link>
                         </li>
+
                         <li>
-                            <Link
-                                className={`link ${pathname === "/popular-medicines" ? "active" : ""}`}
-                                href="/popular-medicines">
-                                Popular Medicines
-                            </Link>
+                            <Link href="/#popular-medicines">Popular Medicines</Link>
                         </li>
+                        {session && (
+                            <li>
+                                <Link className={`link ${pathname === "/dashboard" ? "active" : ""}`} href="/dashboard">
+                                    Dashboard
+                                </Link>
+                            </li>
+                        )}
                     </ul>
                 </div>
 

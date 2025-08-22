@@ -44,6 +44,7 @@ html {
 
   /* shadow */
   --shadow-login-form-shadow: var(--login-shadow);
+  --shadow-form-shadow: var(--login-shadow);
 
 
 }
