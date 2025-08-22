@@ -18,7 +18,7 @@ export default function MedicineCard({ medicine }) {
                 <div className="text-paragraph-primary font-bold text-3xl my-4 flex flex-col">৳{stripPrice}</div>
 
                 <Link
-                    href={"/"}
+                    href={`/medicines/${medicine._id}`}
                     className="bg-green-primary font-montserrat text-white hover:bg-green-dark transition-colors duration-600 ease-in-out cursor-pointer px-4 py-2 text-base rounded-md">
                     View Details
                 </Link>
