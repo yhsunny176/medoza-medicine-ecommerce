@@ -1,8 +1,16 @@
+"use client";
+
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
+import LogoutButton from "../(ui)/LogoutButton";
 
 export default function Navbar() {
+    const pathname = usePathname();
+    const { data: session } = useSession();
+
     return (
         <div>
             <div className="flex items-center justify-between">
@@ -10,11 +18,42 @@ export default function Navbar() {
                     <Image src={"/logo-main.svg"} alt="Medoza brand logo" fill={true} />
                 </div>
                 <div>
-                    <ul>
-                        <li className="">
-                            <Link href="/medicines">Medicines</Link>
+                    <ul className="flex gap-6">
+                        <li>
+                            <Link className={`link ${pathname === "/" ? "active" : ""}`} href="/">
+                                Home
+                            </Link>
+                        </li>
+                        <li>
+                            <a className="link" href="#about-section">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <Link className={`link ${pathname === "/medicines" ? "active" : ""}`} href="/medicines">
+                                Medicines
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                className={`link ${pathname === "/popular-medicines" ? "active" : ""}`}
+                                href="/popular-medicines">
+                                Popular Medicines
+                            </Link>
                         </li>
                     </ul>
+                </div>
+
+                <div>
+                    {session ? (
+                        <LogoutButton />
+                    ) : (
+                        <Link
+                            href={"/login"}
+                            className="bg-green-primary text-white hover:bg-green-dark transition-colors duration-600 ease-in-out cursor-pointer px-4 py-2 text-base">
+                            Login
+                        </Link>
+                    )}
                 </div>
             </div>
         </div>

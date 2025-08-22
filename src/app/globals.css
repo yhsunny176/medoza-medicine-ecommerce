@@ -2,17 +2,57 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: oklch(0.2046 0 0);
+  --prim-blue: oklch(0.55 0.1638 252.4);
+  --prim-green: oklch(0.5417 0.1107 165.94);
+  --dark-green: oklch(0.4783 0.0968 166.6);
+  --prim-cyan: oklch(0.8274 0.1548 168.45);
+
+
+  /* text-colors */
+  --pg-prim: oklch(0.2046 0 0);
+  --lnk-act: oklch(0.55 0.1638 252.4);
+  --btn-txt-sec: oklch(0.3478 0.0835 248.8);
+  --pg-txt-lt: oklch(0.5627 0.0015 286.35);
+
+
+  /* shadows */
+  --login-shadow: -1px 8px 32px -3px rgba(0, 0, 0, 0.1);
+}
+html {
+  scroll-behavior: smooth;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-outfit: var(--font-outfit);
+  --font-montserrat: var(--font-montserrat);
+
+
+  /* colors */
+  --color-blue-primary: var(--prim-blue);
+  --color-green-primary: var(--prim-green);
+  --color-green-dark: var(--dark-green);
+  --color-cyan-primary: var(--prim-cyan);
+
+  /* text-colors */
+  --color-paragraph-primary: var(--pg-prim);
+  --color-button-text-secondary: var(--btn-txt-sec);
+  --color-active-link: var(--lnk-act);
+  --color-paragraph-text-light: var(--pg-txt-lt);
+
+  /* shadow */
+  --shadow-login-form-shadow: var(--login-shadow);
+
+
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+.link.active {
+  @apply text-blue-600 font-bold border-b-2 border-blue-600;
 }
