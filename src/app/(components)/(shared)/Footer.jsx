@@ -7,7 +7,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
     return (
-        <footer className="bg-gray-900 text-white py-10 mt-16">
+        <footer className="bg-gray-900 text-white py-10">
             <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
                 <div className="flex items-center gap-3">
                     <Image src="/logo-white.svg" alt="Medoza Logo" width={160} height={48} />
