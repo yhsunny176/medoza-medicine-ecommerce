@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/logo-text-white.svg" alt="Medoza Logo" width="180" />
+  <img src="public/logo-secondary.svg" alt="Medoza Logo" width="180" />
 </div>
 
 # Medoza - One Stop Medicine Solution
