@@ -11,7 +11,7 @@ async function getMedicines() {
 export default async function Medicines() {
 	const medicines = await getMedicines();
 	return (
-		<div className="max-w-9/12 mx-auto py-16">
+		<div className="min-h-screen max-w-9/12 mx-auto py-16">
 			<h1 className="text-3xl font-bold mb-6">All Medicines</h1>
 			<div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
 				{medicines.length === 0 ? (
