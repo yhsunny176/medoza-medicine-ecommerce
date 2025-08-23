@@ -8,7 +8,7 @@
 [Visit Medoza Medicine Ecommerce](https://medoza-medicine-ecommerce.vercel.app)
 
 ## 🎯 Objective
-Medoza is a modern, full-stack medicine ecommerce platform designed to make healthcare accessible, affordable, and convenient. It enables users to browse, search, and purchase authentic medicines online, with secure authentication and seamless delivery.
+Medoza is a modern, medicine E-commerce platform built with Next.js to make healthcare accessible, affordable, and convenient. It enables users to browse, search, and purchase authentic medicines online, with secure authentication and seamless delivery.
 
 ## 📁 Folder Structure
 ```
