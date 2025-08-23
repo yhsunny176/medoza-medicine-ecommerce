@@ -3,7 +3,7 @@ import MedicineCard from "app/(components)/(cards)/MedicineCard";
 import React from "react";
 
 async function getMedicines() {
-	const res = await fetch("http://localhost:3000/api/medicines", { next: { revalidate: 0 } });
+	const res = await fetch(`${process.env.NEXTAUTH_URL}/api/medicines`, { next: { revalidate: 0 } });
 	const data = await res.json();
 	return data.medicines || [];
 }

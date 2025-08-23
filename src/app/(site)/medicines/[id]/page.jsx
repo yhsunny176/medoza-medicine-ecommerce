@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 async function getMedicineById(id) {
-    const res = await fetch(`http://localhost:3000/api/medicines/${id}`);
+    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/medicines/${id}`);
     if (!res.ok) return null;
     const data = await res.json();
     return data.medicine || null;
